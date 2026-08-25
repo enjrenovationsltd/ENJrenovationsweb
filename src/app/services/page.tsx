@@ -32,7 +32,7 @@ export default function ServicesPage() {
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
           {SERVICES.map((service, i) => (
             <Reveal key={service.slug} className={STAGGER[i % STAGGER.length]}>
-              <div className="group h-full rounded-lg border border-border bg-card p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
+              <div className="group h-full rounded-lg border border-border bg-card p-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-brass/10">
                 <div className="flex items-start justify-between gap-3">
                   <service.icon
                     className="size-9 text-moss transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3"
@@ -77,7 +77,7 @@ export default function ServicesPage() {
             href="/contact"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "shrink-0 bg-brass px-7 text-base font-semibold text-ink hover:bg-brass/90"
+              "shrink-0 bg-gradient-to-b from-brass-light to-brass-dark px-7 text-base font-semibold text-ink shadow-md shadow-brass/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-brass/30"
             )}
           >
             Get Your Free Quote

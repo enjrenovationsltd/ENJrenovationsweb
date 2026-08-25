@@ -52,7 +52,7 @@ export default function StoryPage() {
             href="/contact"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "gap-2 bg-brass px-8 text-base font-semibold text-ink hover:bg-brass/90"
+              "gap-2 bg-gradient-to-b from-brass-light to-brass-dark px-8 text-base font-semibold text-ink shadow-md shadow-brass/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-brass/30"
             )}
           >
             Get Your Free Quote

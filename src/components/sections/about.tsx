@@ -66,7 +66,7 @@ export function About({
           </Reveal>
 
           <Reveal className="delay-150 flex items-center">
-            <figure className="w-full rounded-lg border border-border bg-surface p-8 sm:p-10">
+            <figure className="w-full rounded-lg border border-border bg-surface p-8 shadow-sm transition-all duration-300 hover:border-brass/40 hover:shadow-lg hover:shadow-brass/10 sm:p-10">
               <div className="flex gap-1 text-brass">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-5 fill-brass" />

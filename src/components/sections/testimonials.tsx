@@ -36,7 +36,7 @@ export function Testimonials({
         <div className={`mt-14 grid grid-cols-1 gap-6 ${gridCols}`}>
           {testimonials.map((testimonial, i) => (
             <Reveal key={testimonial.author} className={STAGGER[i % STAGGER.length]}>
-              <figure className="h-full rounded-lg border border-border bg-surface p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5">
+              <figure className="h-full rounded-lg border border-border bg-surface p-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brass/40 hover:shadow-lg hover:shadow-brass/10">
                 <div className="flex gap-1 text-brass">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} className="size-4 fill-brass" />

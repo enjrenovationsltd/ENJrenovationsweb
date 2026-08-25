@@ -66,7 +66,7 @@ export function Hero() {
               href="/contact"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-14 gap-2 rounded-xl bg-brass px-9 text-lg font-bold text-ink shadow-lg shadow-brass/30 hover:bg-brass/90 hover:shadow-xl hover:shadow-brass/40"
+                "h-14 gap-2 rounded-xl bg-gradient-to-b from-brass-light to-brass-dark px-9 text-lg font-bold text-ink shadow-lg shadow-brass/30 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-brass/40"
               )}
             >
               Get Your Free Quote

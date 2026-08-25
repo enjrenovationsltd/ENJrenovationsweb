@@ -37,7 +37,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         solid
-          ? "bg-walnut/95 backdrop-blur supports-[backdrop-filter]:bg-walnut/90 shadow-sm"
+          ? "bg-gradient-to-b from-walnut/95 to-walnut-dark/95 backdrop-blur supports-[backdrop-filter]:from-walnut/90 supports-[backdrop-filter]:to-walnut-dark/90 border-b border-brass/20 shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -84,7 +84,7 @@ export function SiteHeader() {
             href="/contact"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "bg-brass text-ink hover:bg-brass/90"
+              "bg-gradient-to-b from-brass-light to-brass-dark text-ink shadow-sm shadow-brass/30 transition-all hover:brightness-110"
             )}
           >
             Get Your Free Quote
@@ -143,7 +143,7 @@ export function SiteHeader() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center rounded-md bg-brass px-4 py-2.5 text-sm font-semibold text-ink"
+            className="mt-2 inline-flex items-center justify-center rounded-md bg-gradient-to-b from-brass-light to-brass-dark px-4 py-2.5 text-sm font-semibold text-ink shadow-sm shadow-brass/30"
           >
             Get Your Free Quote
           </Link>

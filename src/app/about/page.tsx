@@ -57,7 +57,7 @@ export default function AboutPage() {
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {VALUES.map((value, i) => (
               <Reveal key={value.title} className={STAGGER[i % STAGGER.length]}>
-                <div className="h-full rounded-lg border border-border bg-card p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
+                <div className="h-full rounded-lg border border-border bg-card p-7 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-brass/10">
                   <h3 className="font-display text-xl font-bold tracking-tight text-ink">
                     {value.title}
                   </h3>

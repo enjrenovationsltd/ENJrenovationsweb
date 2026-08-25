@@ -166,7 +166,7 @@ export function Contact() {
                 type="submit"
                 disabled={pending}
                 size="lg"
-                className="w-full bg-moss text-surface hover:bg-moss-dark"
+                className="w-full bg-gradient-to-b from-moss to-moss-dark text-surface shadow-md shadow-moss/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-moss/30"
               >
                 {pending ? "Sending..." : "Send Quote Request"}
               </Button>

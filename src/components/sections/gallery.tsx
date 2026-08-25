@@ -35,7 +35,7 @@ export function Gallery({ limit }: { limit?: number }) {
                   }`}
                 >
                   <div
-                    className={`group relative aspect-square overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10 ${
+                    className={`group relative aspect-square overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-brass/15 ${
                       i % 5 === 0 ? "sm:aspect-[16/10]" : ""
                     }`}
                   >

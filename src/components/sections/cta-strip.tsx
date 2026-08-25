@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function CtaStrip() {
   return (
-    <section className="bg-moss py-14 text-surface">
+    <section className="bg-gradient-to-r from-moss to-moss-dark py-14 text-surface">
       <Reveal className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
@@ -20,7 +20,7 @@ export function CtaStrip() {
             href="/contact"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-brass px-7 text-base font-semibold text-ink hover:bg-brass/90"
+              "bg-gradient-to-b from-brass-light to-brass-dark px-7 text-base font-semibold text-ink shadow-md shadow-brass/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-brass/30"
             )}
           >
             Get Your Free Quote

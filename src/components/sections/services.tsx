@@ -28,7 +28,7 @@ export function Services() {
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
           {SERVICES.map((service, i) => (
             <Reveal key={service.title} className={STAGGER[i % STAGGER.length]}>
-              <div className="group h-full rounded-lg border border-border bg-card p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
+              <div className="group h-full rounded-lg border border-border bg-card p-7 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-brass/10">
                 <div className="flex items-start justify-between gap-3">
                   <service.icon
                     className="size-8 text-moss transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3"

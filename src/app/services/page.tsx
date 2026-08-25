@@ -6,15 +6,63 @@ import { Reveal } from "@/components/reveal";
 import { SERVICES } from "@/lib/services-data";
 import { cn, STAGGER } from "@/lib/utils";
 
+const title = "Services";
+const description =
+  "Kitchen renovations, bathroom renovations, full home renovations, flooring, tile, drywall, and custom cabinetry from ENJ Renovations Ltd in Edmonton, Alberta.";
+
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Kitchen renovations, bathroom renovations, full home renovations, flooring, tile, drywall, and custom cabinetry from ENJ Renovations Ltd in Edmonton, Alberta.",
+  title,
+  description,
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+    url: "/services",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+  },
+};
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: SERVICES.map((service, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Service",
+      name: service.title,
+      description: service.description,
+      areaServed: {
+        "@type": "City",
+        name: "Edmonton",
+      },
+      provider: {
+        "@type": "GeneralContractor",
+        name: "ENJ Renovations Ltd",
+        telephone: "+1-587-984-9310",
+        url: siteUrl,
+      },
+    },
+  })),
 };
 
 export default function ServicesPage() {
   return (
     <section className="py-28 sm:py-36">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">

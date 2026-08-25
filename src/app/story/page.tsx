@@ -4,10 +4,27 @@ import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { cn } from "@/lib/utils";
 
+const title = "Our Story";
+const description =
+  "How a father-and-son team started ENJ Renovations Ltd in Edmonton, Alberta.";
+
 export const metadata: Metadata = {
-  title: "Our Story",
-  description:
-    "How a father-and-son team started ENJ Renovations Ltd in Edmonton, Alberta.",
+  title,
+  description,
+  alternates: {
+    canonical: "/story",
+  },
+  openGraph: {
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+    url: "/story",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+  },
 };
 
 export default function StoryPage() {
@@ -25,10 +42,10 @@ export default function StoryPage() {
 
         <Reveal className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground delay-150">
           <p>
-            ENJ Renovations Ltd started with a simple problem: my dad, Sam, is
-            genuinely good at what he does. Cabinetry especially, along with
-            renovation work more broadly. And he wanted to run his own jobs
-            instead of working someone else&apos;s.
+            ENJ Renovations Ltd started with a simple problem: my dad, Sam,
+            spent years doing cabinetry and renovation work for other
+            companies, and he wanted to run his own jobs instead of
+            somebody else&apos;s.
           </p>
           <p>
             I&apos;m young, and I&apos;m the next generation of ENJ. I don&apos;t

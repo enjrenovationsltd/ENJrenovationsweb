@@ -18,7 +18,12 @@ import { Reveal } from "@/components/reveal";
 
 const initialState: QuoteFormState = { status: "idle" };
 
-export function Contact() {
+export function Contact({
+  headingLevel = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
   const [state, formAction, pending] = useActionState(
     submitQuoteRequest,
     initialState
@@ -34,9 +39,9 @@ export function Contact() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brass">
             Get in touch
           </p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          <Heading className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Get a free quote.
-          </h2>
+          </Heading>
           <p className="mt-5 max-w-md text-surface/80">
             Tell us about your project and we&apos;ll get back to you with a
             clear, honest quote.

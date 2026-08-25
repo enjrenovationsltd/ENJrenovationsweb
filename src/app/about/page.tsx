@@ -5,10 +5,27 @@ import { Reveal } from "@/components/reveal";
 import { TESTIMONIALS } from "@/lib/testimonials-data";
 import { STAGGER } from "@/lib/utils";
 
+const title = "About";
+const description =
+  "ENJ Renovations Ltd is an Edmonton-based, family-run renovation contractor specializing in cabinetry, kitchens, bathrooms, and full home renovations.";
+
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "ENJ Renovations Ltd is an Edmonton-based, family-run renovation contractor specializing in cabinetry, kitchens, bathrooms, and full home renovations.",
+  title,
+  description,
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${title} | ENJ Renovations Ltd`,
+    description,
+  },
 };
 
 const VALUES = [

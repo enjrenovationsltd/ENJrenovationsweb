@@ -5,7 +5,14 @@ import { getGalleryImages } from "@/lib/gallery";
 import { Reveal } from "@/components/reveal";
 import { STAGGER } from "@/lib/utils";
 
-export function Gallery({ limit }: { limit?: number }) {
+export function Gallery({
+  limit,
+  headingLevel = "h2",
+}: {
+  limit?: number;
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
   const allImages = getGalleryImages();
   // First image doubles as the hero background; skip it here unless it's the only one.
   const fullSet = allImages.length > 1 ? allImages.slice(1) : allImages;
@@ -19,9 +26,9 @@ export function Gallery({ limit }: { limit?: number }) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
             Our work
           </p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+          <Heading className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
             Recent projects.
-          </h2>
+          </Heading>
         </Reveal>
 
         {images.length > 0 ? (
@@ -41,7 +48,7 @@ export function Gallery({ limit }: { limit?: number }) {
                   >
                     <Image
                       src={src}
-                      alt={`ENJ Renovations project photo ${i + 1}`}
+                      alt={`ENJ Renovations Edmonton renovation project photo ${i + 1}`}
                       fill
                       sizes="(min-width: 768px) 33vw, 50vw"
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"

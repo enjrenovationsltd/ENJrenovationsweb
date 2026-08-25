@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     "custom cabinetry Edmonton",
     "flooring installation Edmonton",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title,
     description,

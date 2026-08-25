@@ -31,7 +31,7 @@ export default function StoryPage() {
             instead of working someone else&apos;s.
           </p>
           <p>
-            I&apos;m 19, and I&apos;m the next generation of ENJ. I don&apos;t
+            I&apos;m young, and I&apos;m the next generation of ENJ. I don&apos;t
             swing a hammer on-site. That&apos;s Sam and a small crew of guys
             he trusts. What I handle is everything around the work: the
             leads, the marketing, the quotes, and making sure every homeowner

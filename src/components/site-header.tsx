@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,8 @@ const NAV_LINKS = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -24,11 +27,16 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The header is only transparent over Home's tall, dark hero image. Every
+  // other page starts with a light background, so a "transparent until you
+  // scroll" header would render light text on a light page — invisible.
+  const solid = !isHome || scrolled || open;
+
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled || open
+        solid
           ? "bg-walnut/95 backdrop-blur supports-[backdrop-filter]:bg-walnut/90 shadow-sm"
           : "bg-transparent"
       )}

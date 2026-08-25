@@ -2,35 +2,49 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-export function About({ preview = false }: { preview?: boolean }) {
+export function About({
+  preview = false,
+  eyebrow = "About ENJ",
+  heading = "A renovation contractor built on cabinetry.",
+  headingLevel = "h2",
+}: {
+  preview?: boolean;
+  eyebrow?: string;
+  heading?: string;
+  headingLevel?: "h1" | "h2";
+}) {
+  const Heading = headingLevel;
+
   return (
     <section id="about" className="scroll-mt-16 bg-card py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16">
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
-              About ENJ
+              {eyebrow}
             </p>
-            <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              A renovation contractor built on cabinetry.
-            </h2>
+            <Heading className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+              {heading}
+            </Heading>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              ENJ Renovations Ltd is an Edmonton-based renovation contractor
-              helping homeowners update their kitchens, bathrooms, and living
-              spaces. We specialize in flooring installation, tile work,
-              drywall, and custom cabinetry — with a particular focus on
-              cabinet repairs and installations, a specialty of ours.
+              ENJ Renovations Ltd is a small renovation crew based in
+              Edmonton. We do kitchens, bathrooms, and full home
+              renovations — but if you ask what we&apos;re actually known
+              for, it&apos;s cabinets. Building them, repairing them, and
+              fitting them into spaces they were never quite designed for.
             </p>
             {!preview && (
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                Whether you&apos;re renovating one room or the whole house,
-                every project starts with a clear, honest quote and ends with
-                work done right the first time.
+                We&apos;re not trying to be the biggest reno company in the
+                city. We&apos;re trying to be the one you&apos;d actually
+                recommend to a friend — the one that shows up, tells you the
+                truth about cost and timeline, and gets it done without you
+                having to chase us for updates.
               </p>
             )}
             <p className="mt-4 text-lg font-medium text-ink">
-              Reach out today for a free quote on your next renovation
-              project.
+              Renovating one room or the whole house? Reach out for a free
+              quote — no pressure, no games.
             </p>
             {preview && (
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">

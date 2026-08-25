@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { About } from "@/components/sections/about";
 import { Reveal } from "@/components/reveal";
+import { STAGGER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,39 +12,29 @@ export const metadata: Metadata = {
 const VALUES = [
   {
     title: "Straight quotes",
-    body: "You get a clear, honest number up front — no padding, no surprise line items later.",
+    body: "You get a real number, up front, in plain language. No padding it out and no surprise line items once the job's underway.",
   },
   {
     title: "Cabinetry-first craftsmanship",
-    body: "Cabinet work is what ENJ was built on, and that same attention to detail carries into every other part of the job.",
+    body: "Cabinets are where this business started, and that same level of care shows up in everything else we touch — tile, drywall, flooring, all of it.",
   },
   {
     title: "You talk to the owners",
-    body: "No call center. When you reach out, you're talking directly to the people running and doing the work.",
+    body: "There's no call center between you and us. Text or call, and you're reaching the people actually running — and doing — the job.",
   },
   {
     title: "Edmonton-based",
-    body: "We're local, and we're building our name one Edmonton home at a time.",
+    body: "We live here too. We're building our name one Edmonton home at a time, and every job reflects on the next one.",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-28 sm:pt-36">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
-              About ENJ
-            </p>
-            <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              Renovations, done by people who show up.
-            </h1>
-          </Reveal>
-        </div>
-      </section>
-
-      <About />
+      <About
+        heading="Renovations, done by people who show up."
+        headingLevel="h1"
+      />
 
       <section className="bg-surface py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6">
@@ -56,18 +47,17 @@ export default function AboutPage() {
             </h2>
           </Reveal>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {VALUES.map((value) => (
-              <div
-                key={value.title}
-                className="rounded-lg border border-border bg-card p-7"
-              >
-                <h3 className="font-display text-xl font-bold tracking-tight text-ink">
-                  {value.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {value.body}
-                </p>
-              </div>
+            {VALUES.map((value, i) => (
+              <Reveal key={value.title} className={STAGGER[i % STAGGER.length]}>
+                <div className="h-full rounded-lg border border-border bg-card p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
+                  <h3 className="font-display text-xl font-bold tracking-tight text-ink">
+                    {value.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {value.body}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

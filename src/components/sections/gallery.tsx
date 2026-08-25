@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ImageOff } from "lucide-react";
 import { getGalleryImages } from "@/lib/gallery";
 import { Reveal } from "@/components/reveal";
+import { STAGGER } from "@/lib/utils";
 
 export function Gallery({ limit }: { limit?: number }) {
   const allImages = getGalleryImages();
@@ -25,24 +26,31 @@ export function Gallery({ limit }: { limit?: number }) {
 
         {images.length > 0 ? (
           <>
-            <Reveal className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+            <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
               {images.map((src, i) => (
-                <div
+                <Reveal
                   key={src}
-                  className={`relative aspect-square overflow-hidden rounded-lg ${
-                    i % 5 === 0 ? "sm:col-span-2 sm:aspect-[16/10]" : ""
+                  className={`${STAGGER[i % STAGGER.length]} ${
+                    i % 5 === 0 ? "sm:col-span-2" : ""
                   }`}
                 >
-                  <Image
-                    src={src}
-                    alt={`ENJ Renovations project photo ${i + 1}`}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 50vw"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
+                  <div
+                    className={`group relative aspect-square overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10 ${
+                      i % 5 === 0 ? "sm:aspect-[16/10]" : ""
+                    }`}
+                  >
+                    <Image
+                      src={src}
+                      alt={`ENJ Renovations project photo ${i + 1}`}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 50vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/10" />
+                  </div>
+                </Reveal>
               ))}
-            </Reveal>
+            </div>
             {hasMore && (
               <div className="mt-8 text-center">
                 <Link

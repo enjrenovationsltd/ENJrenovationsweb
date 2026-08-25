@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { SERVICES } from "@/lib/services-data";
-import { cn } from "@/lib/utils";
+import { cn, STAGGER } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -30,11 +30,14 @@ export default function ServicesPage() {
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {SERVICES.map((service) => (
-            <Reveal key={service.slug}>
-              <div className="h-full rounded-lg border border-border bg-card p-8">
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.slug} className={STAGGER[i % STAGGER.length]}>
+              <div className="group h-full rounded-lg border border-border bg-card p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
                 <div className="flex items-start justify-between gap-3">
-                  <service.icon className="size-9 text-moss" strokeWidth={1.5} />
+                  <service.icon
+                    className="size-9 text-moss transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3"
+                    strokeWidth={1.5}
+                  />
                   {service.specialty && (
                     <Badge className="bg-brass text-ink hover:bg-brass">
                       Specialty

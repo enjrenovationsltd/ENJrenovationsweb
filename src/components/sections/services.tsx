@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/reveal";
 import { SERVICES } from "@/lib/services-data";
+import { STAGGER } from "@/lib/utils";
 
 export function Services() {
   return (
@@ -24,34 +25,31 @@ export function Services() {
           </Link>
         </Reveal>
 
-        <Reveal
-          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3"
-        >
-          {SERVICES.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-lg border border-border bg-card p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <service.icon
-                  className="size-8 text-moss"
-                  strokeWidth={1.5}
-                />
-                {service.specialty && (
-                  <Badge className="shrink-0 bg-brass text-ink hover:bg-brass">
-                    Specialty
-                  </Badge>
-                )}
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+          {SERVICES.map((service, i) => (
+            <Reveal key={service.title} className={STAGGER[i % STAGGER.length]}>
+              <div className="group h-full rounded-lg border border-border bg-card p-7 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-moss/50 hover:shadow-lg hover:shadow-ink/5">
+                <div className="flex items-start justify-between gap-3">
+                  <service.icon
+                    className="size-8 text-moss transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3"
+                    strokeWidth={1.5}
+                  />
+                  {service.specialty && (
+                    <Badge className="shrink-0 bg-brass text-ink hover:bg-brass">
+                      Specialty
+                    </Badge>
+                  )}
+                </div>
+                <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-ink">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-ink">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {service.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
-        </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { About } from "@/components/sections/about";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Reveal } from "@/components/reveal";
+import { TESTIMONIALS } from "@/lib/testimonials-data";
 import { STAGGER } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -16,11 +18,11 @@ const VALUES = [
   },
   {
     title: "Cabinetry-first craftsmanship",
-    body: "Cabinets are where this business started, and that same level of care shows up in everything else we touch — tile, drywall, flooring, all of it.",
+    body: "Cabinets are where this business started, and that same level of care shows up in everything else we touch: tile, drywall, flooring, all of it.",
   },
   {
     title: "You talk to the owners",
-    body: "There's no call center between you and us. Text or call, and you're reaching the people actually running — and doing — the job.",
+    body: "There's no call center between you and us. Text or call, and you're reaching the people actually running (and doing) the job.",
   },
   {
     title: "Edmonton-based",
@@ -34,6 +36,12 @@ export default function AboutPage() {
       <About
         heading="Renovations, done by people who show up."
         headingLevel="h1"
+      />
+
+      <Testimonials
+        testimonials={TESTIMONIALS.slice(1)}
+        eyebrow="More from real customers"
+        heading="What else people are saying."
       />
 
       <section className="bg-surface py-24 sm:py-32">

@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             color: "#F4EEE6CC",
           }}
         >
-          ENJ Renovations Ltd — kitchens, bathrooms, and cabinetry
+          ENJ Renovations Ltd · Kitchens, bathrooms, and cabinetry
         </div>
       </div>
     ),

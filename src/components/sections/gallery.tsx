@@ -66,7 +66,7 @@ export function Gallery({ limit }: { limit?: number }) {
           <div className="mt-14 flex flex-col items-center gap-3 rounded-lg border border-dashed border-border py-20 text-center text-muted-foreground">
             <ImageOff className="size-8" strokeWidth={1.5} />
             <p className="text-sm">
-              Project photos will appear here — drop images into{" "}
+              Project photos will appear here. Drop images into{" "}
               <code className="rounded bg-muted px-1.5 py-0.5 text-xs">
                 /public/images/
               </code>

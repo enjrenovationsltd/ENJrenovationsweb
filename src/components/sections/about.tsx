@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { TESTIMONIALS } from "@/lib/testimonials-data";
 
 export function About({
   preview = false,
@@ -28,23 +29,23 @@ export function About({
             </Heading>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               ENJ Renovations Ltd is a small renovation crew based in
-              Edmonton. We do kitchens, bathrooms, and full home
-              renovations — but if you ask what we&apos;re actually known
-              for, it&apos;s cabinets. Building them, repairing them, and
-              fitting them into spaces they were never quite designed for.
+              Edmonton. We do kitchens, bathrooms, and full home renovations.
+              But if you ask what we&apos;re actually known for, it&apos;s
+              cabinets: building them, repairing them, and fitting them into
+              spaces they were never quite designed for.
             </p>
             {!preview && (
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                 We&apos;re not trying to be the biggest reno company in the
                 city. We&apos;re trying to be the one you&apos;d actually
-                recommend to a friend — the one that shows up, tells you the
+                recommend to a friend: the one that shows up, tells you the
                 truth about cost and timeline, and gets it done without you
                 having to chase us for updates.
               </p>
             )}
             <p className="mt-4 text-lg font-medium text-ink">
               Renovating one room or the whole house? Reach out for a free
-              quote — no pressure, no games.
+              quote. No pressure, no games.
             </p>
             {preview && (
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
@@ -72,19 +73,10 @@ export function About({
                 ))}
               </div>
               <blockquote className="mt-5 text-lg font-medium leading-relaxed text-ink">
-                &ldquo;We had our kitchen remodeled by ENJ Renovations Ltd.,
-                and the experience was excellent from start to finish. Sam
-                was professional, friendly, and paid great attention to
-                detail. Our old kitchen was transformed into a beautiful,
-                modern space that exceeded our expectations. The quality of
-                the work was outstanding, communication was great throughout
-                the project, and everything was completed on time. We
-                couldn&apos;t be happier with the results and would highly
-                recommend ENJ Renovations Ltd. to anyone looking for quality
-                renovations in Edmonton. Thanks again, Sam!&rdquo;
+                &ldquo;{TESTIMONIALS[0].quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 text-sm font-semibold text-muted-foreground">
-                Sardonix Gel · Google Review
+                {TESTIMONIALS[0].author} · {TESTIMONIALS[0].source}
               </figcaption>
             </figure>
           </Reveal>

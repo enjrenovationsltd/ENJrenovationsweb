@@ -55,7 +55,7 @@ export function Hero() {
         <Reveal className="delay-200">
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-surface/85">
             Kitchens, bathrooms, and full home renovations for Edmonton
-            homeowners — with cabinet repairs and installations as our
+            homeowners, with cabinet repairs and installations as our
             specialty.
           </p>
         </Reveal>

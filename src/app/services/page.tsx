@@ -9,7 +9,7 @@ import { cn, STAGGER } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Kitchen renovations, bathroom renovations, full home renovations, flooring, tile, drywall, and custom cabinetry from ENJ Renovations Ltd — Edmonton, Alberta.",
+    "Kitchen renovations, bathroom renovations, full home renovations, flooring, tile, drywall, and custom cabinetry from ENJ Renovations Ltd in Edmonton, Alberta.",
 };
 
 export default function ServicesPage() {
@@ -24,7 +24,7 @@ export default function ServicesPage() {
             Renovation services in Edmonton.
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            From a single room to the whole house — with custom cabinetry as
+            From a single room to the whole house, with custom cabinetry as
             the specialty our business was built on.
           </p>
         </Reveal>
@@ -69,7 +69,7 @@ export default function ServicesPage() {
               Not sure what your project needs?
             </h2>
             <p className="mt-2 text-surface/85">
-              Tell us about it and we&apos;ll help you figure it out — free of
+              Tell us about it and we&apos;ll help you figure it out, free of
               charge.
             </p>
           </div>

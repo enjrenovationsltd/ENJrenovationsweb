@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
     icon: ChefHat,
     title: "Kitchen Renovations",
     description:
-      "Full kitchen overhauls — layout, cabinetry, counters, and finishes.",
+      "Full kitchen overhauls: layout, cabinetry, counters, and finishes.",
     details: [
       "Layout changes and full gut renovations",
       "Custom and semi-custom cabinetry",

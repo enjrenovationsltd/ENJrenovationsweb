@@ -26,13 +26,13 @@ export default function StoryPage() {
         <Reveal className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground delay-150">
           <p>
             ENJ Renovations Ltd started with a simple problem: my dad, Sam, is
-            genuinely good at what he does — cabinetry especially, along with
-            renovation work more broadly — and he wanted to run his own jobs
+            genuinely good at what he does. Cabinetry especially, along with
+            renovation work more broadly. And he wanted to run his own jobs
             instead of working someone else&apos;s.
           </p>
           <p>
             I&apos;m 19, and I&apos;m the next generation of ENJ. I don&apos;t
-            swing a hammer on-site — that&apos;s Sam and a small crew of guys
+            swing a hammer on-site. That&apos;s Sam and a small crew of guys
             he trusts. What I handle is everything around the work: the
             leads, the marketing, the quotes, and making sure every homeowner
             we talk to gets a straight answer. It&apos;s my first time
@@ -43,7 +43,7 @@ export default function StoryPage() {
             It&apos;s still early days for ENJ, and that works in your
             favour: no call center, no big overhead, and every project gets
             our full attention. If you reach out, you&apos;re talking to one
-            of us directly — not a scheduling line.
+            of us directly, not a scheduling line.
           </p>
         </Reveal>
 

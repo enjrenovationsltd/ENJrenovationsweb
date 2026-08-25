@@ -22,7 +22,7 @@ export function Transformations() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             A quick look at what a kitchen renovation can do. This is an
-            illustrated concept, not a real job — see{" "}
+            illustrated concept, not a real job. See{" "}
             <Link
               href="/gallery"
               className="text-ink underline decoration-moss/40 underline-offset-4 hover:decoration-moss"
@@ -39,7 +39,7 @@ export function Transformations() {
             after={<KitchenAfterIllustration className="h-full w-full" />}
           />
           <p className="mt-3 text-center text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Concept illustration — not an actual ENJ project
+            Concept illustration, not an actual ENJ project
           </p>
         </Reveal>
       </div>

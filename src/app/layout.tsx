@@ -18,7 +18,7 @@ const inter = Inter({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const title = "ENJ Renovations Ltd | Edmonton Renovation Contractor";
 const description =
-  "Edmonton-based renovation contractor specializing in kitchens, bathrooms, flooring, tile, drywall, and custom cabinetry — with a focus on cabinet repairs and installations. Free quotes.";
+  "Edmonton-based renovation contractor specializing in kitchens, bathrooms, flooring, tile, drywall, and custom cabinetry, with a focus on cabinet repairs and installations. Free quotes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

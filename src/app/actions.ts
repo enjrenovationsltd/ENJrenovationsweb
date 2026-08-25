@@ -32,7 +32,7 @@ export async function submitQuoteRequest(
     return {
       status: "error",
       message:
-        "Sorry, the quote form isn't fully set up yet — please call or email us directly.",
+        "Sorry, the quote form isn't fully set up yet. Please call or email us directly.",
     };
   }
 
@@ -62,12 +62,12 @@ export async function submitQuoteRequest(
     return {
       status: "error",
       message:
-        "Something went wrong sending your request — please call or email us directly.",
+        "Something went wrong sending your request. Please call or email us directly.",
     };
   }
 
   return {
     status: "success",
-    message: "Thanks — we've got your request and will be in touch soon.",
+    message: "Thanks! We've got your request and will be in touch soon.",
   };
 }

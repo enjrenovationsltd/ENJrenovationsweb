@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { getGalleryImages } from "@/lib/gallery";
 import { Reveal } from "@/components/reveal";
@@ -61,8 +62,8 @@ export function Hero() {
 
         <Reveal className="delay-300">
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "h-14 gap-2 rounded-xl bg-brass px-9 text-lg font-bold text-ink shadow-lg shadow-brass/30 hover:bg-brass/90 hover:shadow-xl hover:shadow-brass/40"
@@ -70,7 +71,7 @@ export function Hero() {
             >
               Get Your Free Quote
               <ArrowRight className="ml-1 size-5 transition-transform group-hover/button:translate-x-1" />
-            </a>
+            </Link>
             <a
               href="tel:+15879849310"
               className={cn(
@@ -81,12 +82,12 @@ export function Hero() {
               <Phone className="size-5" />
               (587) 984-9310
             </a>
-            <a
-              href="#services"
+            <Link
+              href="/services"
               className="text-sm font-medium text-surface/80 underline decoration-surface/30 underline-offset-4 hover:text-surface hover:decoration-surface"
             >
               See what we do
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

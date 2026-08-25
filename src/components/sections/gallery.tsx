@@ -1,12 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ImageOff } from "lucide-react";
 import { getGalleryImages } from "@/lib/gallery";
 import { Reveal } from "@/components/reveal";
 
-export function Gallery() {
+export function Gallery({ limit }: { limit?: number }) {
   const allImages = getGalleryImages();
   // First image doubles as the hero background; skip it here unless it's the only one.
-  const images = allImages.length > 1 ? allImages.slice(1) : allImages;
+  const fullSet = allImages.length > 1 ? allImages.slice(1) : allImages;
+  const images = limit ? fullSet.slice(0, limit) : fullSet;
+  const hasMore = Boolean(limit && fullSet.length > limit);
 
   return (
     <section id="gallery" className="scroll-mt-16 bg-surface py-24 sm:py-32">
@@ -21,24 +24,36 @@ export function Gallery() {
         </Reveal>
 
         {images.length > 0 ? (
-          <Reveal className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-            {images.map((src, i) => (
-              <div
-                key={src}
-                className={`relative aspect-square overflow-hidden rounded-lg ${
-                  i % 5 === 0 ? "sm:col-span-2 sm:aspect-[16/10]" : ""
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt={`ENJ Renovations project photo ${i + 1}`}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+          <>
+            <Reveal className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+              {images.map((src, i) => (
+                <div
+                  key={src}
+                  className={`relative aspect-square overflow-hidden rounded-lg ${
+                    i % 5 === 0 ? "sm:col-span-2 sm:aspect-[16/10]" : ""
+                  }`}
+                >
+                  <Image
+                    src={src}
+                    alt={`ENJ Renovations project photo ${i + 1}`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 50vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              ))}
+            </Reveal>
+            {hasMore && (
+              <div className="mt-8 text-center">
+                <Link
+                  href="/gallery"
+                  className="text-sm font-semibold text-moss underline decoration-moss/40 underline-offset-4 hover:text-moss-dark"
+                >
+                  View full gallery →
+                </Link>
               </div>
-            ))}
-          </Reveal>
+            )}
+          </>
         ) : (
           <div className="mt-14 flex flex-col items-center gap-3 rounded-lg border border-dashed border-border py-20 text-center text-muted-foreground">
             <ImageOff className="size-8" strokeWidth={1.5} />

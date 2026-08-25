@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
@@ -15,15 +16,15 @@ export function CtaStrip() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className={cn(
               buttonVariants({ size: "lg" }),
               "bg-brass px-7 text-base font-semibold text-ink hover:bg-brass/90"
             )}
           >
             Get Your Free Quote
-          </a>
+          </Link>
           <a
             href="tel:+15879849310"
             className="flex items-center gap-2 text-sm font-medium text-surface/90 underline decoration-surface/30 underline-offset-4 hover:text-surface hover:decoration-surface"

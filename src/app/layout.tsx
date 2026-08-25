@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-display",
@@ -48,6 +50,29 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  name: "ENJ Renovations Ltd",
+  description,
+  url: siteUrl,
+  telephone: "+1-587-984-9310",
+  email: "enjrenovationsltd@gmail.com",
+  priceRange: "$$",
+  areaServed: {
+    "@type": "City",
+    name: "Edmonton",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Edmonton",
+    addressRegion: "AB",
+    addressCountry: "CA",
+  },
+  // TODO: add your Google Business Profile URL here once you have it, e.g.
+  // sameAs: ["https://g.page/r/your-google-business-id"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,10 +84,17 @@ export default function RootLayout({
       className={`${bricolage.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <noscript>
           <style>{`[data-reveal]{opacity:1!important}`}</style>
         </noscript>
-        {children}
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <Link
-            href="#top"
+            href="/"
             className="font-display text-lg font-bold text-surface"
           >
             ENJ Renovations Ltd
@@ -14,6 +14,37 @@ export function SiteFooter() {
           <p className="mt-2 max-w-xs text-sm">
             Renovation contractor serving Edmonton, Alberta.
           </p>
+        </div>
+
+        <div className="text-sm">
+          <p className="font-semibold text-surface">Site</p>
+          <ul className="mt-2 space-y-1">
+            <li>
+              <Link href="/services" className="hover:text-surface">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-surface">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/story" className="hover:text-surface">
+                Our Story
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery" className="hover:text-surface">
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-surface">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div className="text-sm">

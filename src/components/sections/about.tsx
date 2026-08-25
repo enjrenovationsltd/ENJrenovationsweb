@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Star } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-export function About() {
+export function About({ preview = false }: { preview?: boolean }) {
   return (
     <section id="about" className="scroll-mt-16 bg-card py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -20,15 +21,33 @@ export function About() {
               drywall, and custom cabinetry — with a particular focus on
               cabinet repairs and installations, a specialty of ours.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Whether you&apos;re renovating one room or the whole house,
-              every project starts with a clear, honest quote and ends with
-              work done right the first time.
-            </p>
+            {!preview && (
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                Whether you&apos;re renovating one room or the whole house,
+                every project starts with a clear, honest quote and ends with
+                work done right the first time.
+              </p>
+            )}
             <p className="mt-4 text-lg font-medium text-ink">
               Reach out today for a free quote on your next renovation
               project.
             </p>
+            {preview && (
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+                <Link
+                  href="/about"
+                  className="text-moss underline decoration-moss/40 underline-offset-4 hover:text-moss-dark"
+                >
+                  More about ENJ
+                </Link>
+                <Link
+                  href="/story"
+                  className="text-moss underline decoration-moss/40 underline-offset-4 hover:text-moss-dark"
+                >
+                  Read our story
+                </Link>
+              </div>
+            )}
           </Reveal>
 
           <Reveal className="delay-150 flex items-center">

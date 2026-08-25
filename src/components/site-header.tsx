@@ -7,10 +7,10 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/story", label: "Our Story" },
+  { href: "/gallery", label: "Gallery" },
 ];
 
 export function SiteHeader() {
@@ -35,7 +35,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
-          href="#top"
+          href="/"
           className="font-display text-lg font-bold tracking-tight text-surface"
         >
           ENJ Renovations
@@ -43,13 +43,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-surface/85 transition-colors hover:text-brass"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -72,15 +72,15 @@ export function SiteHeader() {
           >
             <MessageCircle className="size-4" />
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className={cn(
               buttonVariants({ size: "sm" }),
               "bg-brass text-ink hover:bg-brass/90"
             )}
           >
             Get Your Free Quote
-          </a>
+          </Link>
         </div>
 
         <div className="flex items-center gap-4 md:hidden">
@@ -107,14 +107,14 @@ export function SiteHeader() {
       {open && (
         <nav className="flex flex-col gap-1 border-t border-surface/10 px-6 pb-6 md:hidden">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="py-3 text-base font-medium text-surface/90 hover:text-brass"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="tel:+15879849310"
@@ -132,13 +132,13 @@ export function SiteHeader() {
             <MessageCircle className="size-4" />
             Text Us
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center rounded-md bg-brass px-4 py-2.5 text-sm font-semibold text-ink"
           >
             Get Your Free Quote
-          </a>
+          </Link>
         </nav>
       )}
     </header>

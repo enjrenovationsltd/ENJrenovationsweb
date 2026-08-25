@@ -1,67 +1,27 @@
-import {
-  ChefHat,
-  Bath,
-  Home,
-  LayoutGrid,
-  Grid3x3,
-  PaintRoller,
-  Hammer,
-} from "lucide-react";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/reveal";
-
-const SERVICES = [
-  {
-    icon: ChefHat,
-    title: "Kitchen Renovations",
-    description:
-      "Full kitchen overhauls — layout, cabinetry, counters, and finishes.",
-  },
-  {
-    icon: Bath,
-    title: "Bathroom Renovations",
-    description:
-      "From single-fixture updates to complete bathroom rebuilds.",
-  },
-  {
-    icon: Home,
-    title: "Full Home Renovations",
-    description: "Coordinated, room-by-room renovation of your whole house.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Flooring Installation",
-    description: "Hardwood, laminate, vinyl, and tile flooring, done clean.",
-  },
-  {
-    icon: Grid3x3,
-    title: "Tile Work",
-    description: "Precise tile installation for kitchens, baths, and floors.",
-  },
-  {
-    icon: PaintRoller,
-    title: "Drywall",
-    description: "Drywall installation, repair, and finishing.",
-  },
-  {
-    icon: Hammer,
-    title: "Custom Cabinetry",
-    description: "Cabinet repairs and installations built to fit your space.",
-    specialty: true,
-  },
-];
+import { SERVICES } from "@/lib/services-data";
 
 export function Services() {
   return (
     <section id="services" className="scroll-mt-16 bg-surface py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <Reveal className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
-            What we do
-          </p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-            Renovation work, done properly.
-          </h2>
+        <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
+              What we do
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+              Renovation work, done properly.
+            </h2>
+          </div>
+          <Link
+            href="/services"
+            className="text-sm font-semibold text-moss underline decoration-moss/40 underline-offset-4 hover:text-moss-dark"
+          >
+            View all services →
+          </Link>
         </Reveal>
 
         <Reveal

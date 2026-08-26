@@ -1,9 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
-import {
-  KitchenAfterIllustration,
-  KitchenBeforeIllustration,
-} from "@/components/kitchen-illustration";
 import { Reveal } from "@/components/reveal";
 
 export function Transformations() {
@@ -22,7 +19,7 @@ export function Transformations() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             A quick look at what a kitchen renovation can do. This is an
-            illustrated concept, not a real job. See{" "}
+            AI-generated concept, not a real job. See{" "}
             <Link
               href="/gallery"
               className="text-ink underline decoration-moss/40 underline-offset-4 hover:decoration-moss"
@@ -35,11 +32,27 @@ export function Transformations() {
 
         <Reveal className="mt-10 delay-150">
           <BeforeAfterSlider
-            before={<KitchenBeforeIllustration className="h-full w-full" />}
-            after={<KitchenAfterIllustration className="h-full w-full" />}
+            before={
+              <Image
+                src="/images/transformations/kitchen-before.jpg"
+                alt="AI-generated concept of a dated kitchen before renovation"
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+              />
+            }
+            after={
+              <Image
+                src="/images/transformations/kitchen-after.jpg"
+                alt="AI-generated concept of a renovated kitchen after renovation"
+                fill
+                sizes="(min-width: 768px) 768px, 100vw"
+                className="object-cover"
+              />
+            }
           />
           <p className="mt-3 text-center text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Concept illustration, not an actual ENJ project
+            AI-generated concept — not an actual ENJ project
           </p>
         </Reveal>
       </div>

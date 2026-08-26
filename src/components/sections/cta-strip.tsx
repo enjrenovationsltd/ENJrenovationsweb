@@ -10,9 +10,11 @@ export function CtaStrip() {
       <Reveal className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
-            Ready to start your renovation?
+            Thinking about your next renovation?
           </h2>
-          <p className="mt-2 text-surface/85">Free quotes, no obligation.</p>
+          <p className="mt-2 text-surface/85">
+            Free, no-obligation estimates.
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
@@ -23,7 +25,7 @@ export function CtaStrip() {
               "bg-gradient-to-b from-brass-light to-brass-dark px-7 text-base font-semibold text-ink shadow-md shadow-brass/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-brass/30"
             )}
           >
-            Get Your Free Quote
+            Get a Free Renovation Quote
           </Link>
           <a
             href="tel:+15879849310"

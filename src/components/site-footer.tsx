@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRIORITY_SERVICES } from "@/lib/services-data";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,8 @@ export function SiteFooter() {
             ENJ Renovations Ltd
           </Link>
           <p className="mt-2 max-w-xs text-sm">
-            Renovation contractor serving Edmonton, Alberta.
+            Full-service renovations. Cabinetry specialists. Serving
+            Edmonton, Alberta.
           </p>
         </div>
 
@@ -64,9 +66,16 @@ export function SiteFooter() {
         <div className="text-sm">
           <p className="font-semibold text-surface">Services</p>
           <ul className="mt-2 space-y-1">
-            <li>Kitchen &amp; Bathroom Renovations</li>
-            <li>Flooring &amp; Tile</li>
-            <li>Cabinet Repairs &amp; Installations</li>
+            {PRIORITY_SERVICES.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="hover:text-surface"
+                >
+                  {service.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

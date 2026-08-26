@@ -87,7 +87,7 @@ export function SiteHeader() {
               "bg-gradient-to-b from-brass-light to-brass-dark text-ink shadow-sm shadow-brass/30 transition-all hover:brightness-110"
             )}
           >
-            Get Your Free Quote
+            Get a Quote
           </Link>
         </div>
 
@@ -145,7 +145,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center rounded-md bg-gradient-to-b from-brass-light to-brass-dark px-4 py-2.5 text-sm font-semibold text-ink shadow-sm shadow-brass/30"
           >
-            Get Your Free Quote
+            Get a Free Renovation Quote
           </Link>
         </nav>
       )}

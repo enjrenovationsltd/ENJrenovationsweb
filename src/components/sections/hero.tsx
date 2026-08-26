@@ -46,17 +46,23 @@ export function Hero() {
 
         <Reveal className="delay-100">
           <h1 className="max-w-3xl font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-surface sm:text-6xl md:text-7xl">
-            Built right.
+            Edmonton home renovations,
             <br />
-            The first time.
+            done right.
           </h1>
         </Reveal>
 
+        <Reveal className="delay-150">
+          <p className="mt-5 max-w-xl text-lg font-semibold text-brass">
+            Full-service renovations. Cabinetry specialists.
+          </p>
+        </Reveal>
+
         <Reveal className="delay-200">
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-surface/85">
-            Kitchens, bathrooms, and full home renovations for Edmonton
-            homeowners, with cabinet repairs and installations as our
-            specialty.
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-surface/85">
+            Kitchens, bathrooms, basements, and full home renovations for
+            Edmonton homeowners, built by a crew that started with cabinetry
+            and never lost that attention to detail.
           </p>
         </Reveal>
 
@@ -69,25 +75,25 @@ export function Hero() {
                 "h-14 gap-2 rounded-xl bg-gradient-to-b from-brass-light to-brass-dark px-9 text-lg font-bold text-ink shadow-lg shadow-brass/30 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-brass/40"
               )}
             >
-              Get Your Free Quote
+              Get a Free Renovation Quote
               <ArrowRight className="ml-1 size-5 transition-transform group-hover/button:translate-x-1" />
             </Link>
-            <a
-              href="tel:+15879849310"
+            <Link
+              href="/gallery"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "h-14 gap-2 rounded-xl bg-surface px-9 text-lg font-bold text-ink shadow-lg shadow-ink/20 hover:bg-surface/90 hover:shadow-xl hover:shadow-ink/25"
               )}
             >
-              <Phone className="size-5" />
+              View Our Work
+            </Link>
+            <a
+              href="tel:+15879849310"
+              className="flex items-center gap-2 text-sm font-medium text-surface/80 underline decoration-surface/30 underline-offset-4 hover:text-surface hover:decoration-surface"
+            >
+              <Phone className="size-4" />
               (587) 984-9310
             </a>
-            <Link
-              href="/services"
-              className="text-sm font-medium text-surface/80 underline decoration-surface/30 underline-offset-4 hover:text-surface hover:decoration-surface"
-            >
-              See what we do
-            </Link>
           </div>
         </Reveal>
       </div>

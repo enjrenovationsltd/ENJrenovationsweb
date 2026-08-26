@@ -18,7 +18,7 @@ const inter = Inter({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const title = "ENJ Renovations Ltd | Edmonton Renovation Contractor";
 const description =
-  "Edmonton-based renovation contractor specializing in kitchens, bathrooms, flooring, tile, drywall, and custom cabinetry, with a focus on cabinet repairs and installations. Free quotes.";
+  "Full-service renovations, cabinetry specialists. ENJ Renovations Ltd is an Edmonton-based renovation contractor handling kitchens, bathrooms, basements, and full home renovations, plus cabinet installation, flooring, tile, and drywall.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,7 +31,9 @@ export const metadata: Metadata = {
     "Edmonton renovation contractor",
     "kitchen renovation Edmonton",
     "bathroom renovation Edmonton",
-    "cabinet repair Edmonton",
+    "basement renovation Edmonton",
+    "full home renovation Edmonton",
+    "cabinet installation Edmonton",
     "custom cabinetry Edmonton",
     "flooring installation Edmonton",
   ],

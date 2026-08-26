@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImageOff } from "lucide-react";
 import { getGalleryImages } from "@/lib/gallery";
+import { PROJECT_CAPTIONS } from "@/lib/project-captions";
 import { Reveal } from "@/components/reveal";
 import { STAGGER } from "@/lib/utils";
 
@@ -24,39 +25,47 @@ export function Gallery({
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-moss">
-            Our work
+            Featured projects
           </p>
           <Heading className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-            Recent projects.
+            Real Edmonton renovations.
           </Heading>
         </Reveal>
 
         {images.length > 0 ? (
           <>
-            <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-              {images.map((src, i) => (
-                <Reveal
-                  key={src}
-                  className={`${STAGGER[i % STAGGER.length]} ${
-                    i % 5 === 0 ? "sm:col-span-2" : ""
-                  }`}
-                >
-                  <div
-                    className={`group relative aspect-square overflow-hidden rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-brass/15 ${
-                      i % 5 === 0 ? "sm:aspect-[16/10]" : ""
-                    }`}
-                  >
-                    <Image
-                      src={src}
-                      alt={`ENJ Renovations Edmonton renovation project photo ${i + 1}`}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 50vw"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/10" />
-                  </div>
-                </Reveal>
-              ))}
+            <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {images.map((src, i) => {
+                const info = PROJECT_CAPTIONS[src];
+                return (
+                  <Reveal key={src} className={STAGGER[i % STAGGER.length]}>
+                    <figure className="group h-full overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-brass/15">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={src}
+                          alt={
+                            info?.alt ??
+                            `ENJ Renovations Edmonton renovation project photo ${i + 1}`
+                          }
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        />
+                      </div>
+                      {info && (
+                        <figcaption className="p-4">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-moss">
+                            {info.category}
+                          </p>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {info.caption}
+                          </p>
+                        </figcaption>
+                      )}
+                    </figure>
+                  </Reveal>
+                );
+              })}
             </div>
             {hasMore && (
               <div className="mt-8 text-center">

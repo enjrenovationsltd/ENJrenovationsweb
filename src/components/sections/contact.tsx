@@ -40,11 +40,11 @@ export function Contact({
             Get in touch
           </p>
           <Heading className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Get a free quote.
+            Ready to start your renovation?
           </Heading>
           <p className="mt-5 max-w-md text-surface/80">
-            Tell us about your project and we&apos;ll get back to you with a
-            clear, honest quote.
+            Tell us about your project and we&apos;ll follow up with a
+            detailed estimate based on its scope, materials, and finishes.
           </p>
 
           <div className="mt-10 space-y-4 text-surface/85">
@@ -133,17 +133,20 @@ export function Contact({
                     <SelectItem value="bathroom">
                       Bathroom Renovation
                     </SelectItem>
+                    <SelectItem value="basement">
+                      Basement Renovation
+                    </SelectItem>
                     <SelectItem value="full-home">
                       Full Home Renovation
+                    </SelectItem>
+                    <SelectItem value="cabinetry">
+                      Cabinet Installation / Repair
                     </SelectItem>
                     <SelectItem value="flooring">
                       Flooring Installation
                     </SelectItem>
                     <SelectItem value="tile">Tile Work</SelectItem>
                     <SelectItem value="drywall">Drywall</SelectItem>
-                    <SelectItem value="cabinetry">
-                      Custom Cabinetry / Cabinet Repair
-                    </SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -173,7 +176,7 @@ export function Contact({
                 size="lg"
                 className="w-full bg-gradient-to-b from-moss to-moss-dark text-surface shadow-md shadow-moss/25 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-moss/30"
               >
-                {pending ? "Sending..." : "Send Quote Request"}
+                {pending ? "Sending..." : "Request a Free Quote"}
               </Button>
             </form>
           )}
